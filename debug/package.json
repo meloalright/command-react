@@ -1,0 +1,24 @@
+{
+  "name": "debug-playground",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/index.bundle.js",
+  "scripts": {
+    "start-prod": "node ./dist/index.bundle.prod.js",
+    "start": "node ./dist/index.bundle.js",
+    "build-prod": "webpack -c webpack.prod.config.js",
+    "build": "webpack"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.16.4",
+    "@babel/preset-react": "^7.16.0",
+    "@types/react": "^17.0.35",
+    "babel-loader": "^8.2.3",
+    "react": "^17.0.2",
+    "command-react": "latest",
+    "webpack": "^5.64.2",
+    "webpack-cli": "^4.9.1"
+  },
+  "author": "",
+  "license": "ISC"
+}

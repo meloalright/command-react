@@ -1,0 +1,39 @@
+{
+  "name": "command-react",
+  "version": "0.0.1",
+  "description": "Render the React Component in Command",
+  "main": "dist/core.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "files": [
+    "dist",
+    "typings",
+    "README.md",
+    "package.json"
+  ],
+  "devDependencies": {
+    "@types/react": "^17.0.35",
+    "react": "^17.0.2",
+    "react-reconciler": "^0.26.2",
+    "ts-loader": "^9.2.6",
+    "webpack": "^5.64.2",
+    "webpack-cli": "^4.9.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meloalright/command-react.git"
+  },
+  "keywords": [
+    "command-react",
+    "react-command",
+    "command",
+    "react"
+  ],
+  "author": "meloalright",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/meloalright/command-react/issues"
+  },
+  "homepage": "https://github.com/meloalright/command-react#readme"
+}
