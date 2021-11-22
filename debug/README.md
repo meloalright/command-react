@@ -3,9 +3,9 @@ $ npm i
 ```
 
 ```shell
-$ npm run build-prod
+$ npm run build
 ```
 
 ```shell
-$ npm run start-prod
+$ npm run start
 ```

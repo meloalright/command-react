@@ -74,4 +74,4 @@ class App extends React.Component {
 
 const command = CommandReact.default;
 
-command.render(React.createElement(App, {}, null), new Screen({}));
+command.render(<App/>, new Screen({}));

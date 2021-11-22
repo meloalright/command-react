@@ -4,10 +4,10 @@
   "description": "",
   "main": "dist/index.bundle.js",
   "scripts": {
-    "start-prod": "node ./dist/index.bundle.prod.js",
-    "start": "node ./dist/index.bundle.js",
-    "build-prod": "webpack -c webpack.prod.config.js",
-    "build": "webpack"
+    "start": "node ./dist/index.bundle.prod.js",
+    "start-dev": "node ./dist/index.bundle.js",
+    "build": "webpack -c webpack.prod.config.js",
+    "build-dev": "webpack -c webpack.dev.config.js"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.16.4",
