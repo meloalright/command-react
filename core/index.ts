@@ -1,5 +1,5 @@
 import renderer from "./renderer";
-import { Button } from "./widgets";
+import { Text, Container, Button } from "./widgets";
 
 export * from "./widgets";
 
@@ -78,12 +78,17 @@ class Core {
 }
 
 export default {
+  component: renderer.component,
   render(root, screen) {
     const core = new Core();
 
     screen.onScreenCommit(() => {
       core.paint(screen);
     });
+
+    renderer.component('text', Text);
+    renderer.component('container', Container);
+    renderer.component('button', Button);
 
     renderer.regist(root, screen);
 

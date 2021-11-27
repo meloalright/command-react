@@ -25,7 +25,7 @@ const { Screen } = CommandReact;
 ```
 
 ```javascript
-command.render(<App/>, new Screen({}));
+CommandReact.default.render(<App/>, new Screen({}));
 ```
 
 ## Demo

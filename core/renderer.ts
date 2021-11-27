@@ -1,5 +1,5 @@
 import ReactReconciler from "react-reconciler";
-import { Screen, Container, Button, Text } from "./widgets";
+import { Screen, Text, Widget } from "./widgets";
 
 const rootHostContext = {};
 const childHostContext = {};
@@ -14,14 +14,13 @@ const hostConfig = {
    This is where react-reconciler wants to create an instance of UI element in terms of the target. Since our target here is the DOM, we will create document.createElement and type is the argument that contains the type string like div or img or h1 etc. The initial values of domElement attributes can be set in this function from the newProps argument
    */
   createInstance: (
-    type,
+    type: string,
     newProps,
     rootContainerInstance,
     _currentHostContext,
     workInProgress
   ) => {
     const props: any = {};
-    let component;
 
     Object.keys(newProps).forEach((propName) => {
       const propValue = newProps[propName];
@@ -39,20 +38,10 @@ const hostConfig = {
         props[propName] = propValue;
       }
     });
-    switch (type) {
-      case "button": {
-        component = new Button(props);
-        break;
-      }
-      case "text": {
-        component = new Text(props);
-        break;
-      }
-      default: {
-        component = new Container(props);
-      }
+    if (Registry[type]) {
+      return new (Registry[type])(props);
     }
-    return component; // !TODO
+    return null;
   },
   createTextInstance: (text) => new Text({ text }),
   appendInitialChild: (parent, child) => {
@@ -117,7 +106,12 @@ const hostConfig = {
 
 const ReactReconcilerInst = ReactReconciler(hostConfig);
 
+const Registry: { [idx: string]: typeof Widget } = {};
+
 export default {
+  component: (type: string, widget: typeof Widget) => {
+    Registry[type] = widget;
+  },
   regist: (reactElement, domElement, callback?) => {
     // console.log(arguments);
     // Create a root Container if it doesnt exist

@@ -1,11 +1,21 @@
 const React = require("react");
 const CommandReact = require("command-react");
 const { Checkbox } = require("command-react/dist/checkbox");
-const { Screen } = CommandReact;
+const { Screen, Button, Widget } = CommandReact;
 
 class Counter extends React.Component {
   render() {
     return this.props.count;
+  }
+}
+
+class face extends Widget {
+  map = {
+    'dog': '🐶',
+    'person': '🤔',
+  };
+  draw() {
+    process.stdout.write(this.map[this.props.type]);
   }
 }
 
@@ -26,6 +36,8 @@ class App extends React.Component {
           <text>----------------------</text>
         </container>
         <container>
+          <face type={'dog'} />
+          <face type={'person'} />
           <text>This is a Counter build by command-react,</text>
         </container>
         <container>
@@ -73,5 +85,7 @@ class App extends React.Component {
 }
 
 const command = CommandReact.default;
+
+command.component('face', face);
 
 command.render(<App/>, new Screen({}));

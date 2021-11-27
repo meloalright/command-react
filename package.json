@@ -1,6 +1,6 @@
 {
   "name": "command-react",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Render the React Component in Command",
   "main": "dist/core.js",
   "scripts": {

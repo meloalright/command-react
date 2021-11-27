@@ -1,3 +1,5 @@
+[index.js](./index.js)
+
 ```shell
 $ npm i
 ```
