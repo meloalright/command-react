@@ -3,6 +3,7 @@ const path = require("path");
 module.exports = {
   entry: {
     core: "./core/index.ts",
+    inspector: "./core/inspector.ts",
     checkbox: "./components/checkbox.ts",
   },
   mode: "production",
@@ -33,6 +34,8 @@ module.exports = {
   },
   externals: {
     react: "react",
-    readline: "readline"
+    readline: "readline",
+    ws: "ws",
+    "./inspector": "./inspector"
   },
 };

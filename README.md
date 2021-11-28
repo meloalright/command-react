@@ -30,7 +30,9 @@ CommandReact.default.render(<App/>, new Screen({}));
 
 ## Demo
 
-[Demo 示例工程](./debug)
+`示例工程`
+
+[./debug](./debug)
 
 ## License
 

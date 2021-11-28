@@ -108,6 +108,10 @@ const ReactReconcilerInst = ReactReconciler(hostConfig);
 
 const Registry: { [idx: string]: typeof Widget } = {};
 
+if (process.env.INSPECTOR) {
+  require('./inspector').default.inspect(ReactReconcilerInst);
+}
+
 export default {
   component: (type: string, widget: typeof Widget) => {
     Registry[type] = widget;

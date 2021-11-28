@@ -18,6 +18,8 @@ module.exports = {
     minimize: false,
   },
   externals: {
+    'ws': "require('ws')",
+    'react-devtools': "require('react-devtools')",
     'readline': "require('readline')",
   },
 };
